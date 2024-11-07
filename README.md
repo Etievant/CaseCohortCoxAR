@@ -25,7 +25,7 @@ Each script relies on functions provided in `help.functions.R`.
 
 * Open and run the whole script(s).
 
-* The results of the simulations are saved in tables csv. For example, when running script `simulations_exhaustive.R`, file `details.logAR_exhaustive.csv` will contain the simulation results displayed in Table 1 in Section 5, in Web Table 6 in Web Appendix C.3.1, and in Web Table 11 in Web Appendix E.4.1.
+* The results of the simulations are saved in tables csv. For example, when running script `simulations_exhaustive.R`, file `details.logAR.y1_exhaustive.csv` will contain the simulation results displayed in Table 1 in Section 5, in Web Table 6 in Web Appendix C.3.1, and in Web Table 11 in Web Appendix E.4.1.
 
 
 ### Functions provided in `help.functions.R`
