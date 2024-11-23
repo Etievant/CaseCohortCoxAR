@@ -113,7 +113,6 @@ E.exp.y2       <- exp(1/2 * beta32^2 + 1/2 * (beta12 + beta32 * alpha12)^2) *
      integrate(densityX1X3.y2, 2, 10)$value * 
      sum(exp((beta22 + beta32 * alpha22) * 0:2) * Prob.x22[3,])) # E(exp(beta12 * X1 + beta32 * X3))
 
-
 Nreplic <- 5000 / 10 # we break down the replications in 10
 
 set.seed(12345)
@@ -822,7 +821,7 @@ Onerun <- function (p) {
 # ------------------------------------------------------------------------------
 # Running the simulations in parallel for all the scenarios --------------------
 
-resultat <- mclapply(1:nrow(parameters), Onerun, mc.cores = 64)
+# result <- mclapply(1:nrow(parameters), Onerun, mc.cores = 64)
 
 # ------------------------------------------------------------------------------
 # Combining the simulation results ---------------------------------------------
@@ -875,7 +874,6 @@ details.AR.y1     <- NULL
 details.PR.y1     <- NULL
 details.logAR.y1     <- NULL
 details.logPR.y1     <- NULL
-
 for (i in 1:nrow(parameters)) {
   
   RECAP1 <- RECAP[((i-1) * (n.method * Nreplic) + 1):(i * (n.method * Nreplic)), ]
@@ -1215,43 +1213,34 @@ save(details.AR.y1, file = paste0("details.AR.y1", simul.name, ".Rdata"))
 col.names.AR.y1 <- colnames(details.AR.y1[,c(1:90)])
 details.AR.y1[col.names.AR.y1] <- sapply(details.AR.y1[col.names.AR.y1], 
                                            as.numeric)
-details.AR.y1[col.names.AR.y1] <- round(details.AR.y1[col.names.AR.y1], 
-                                          digits = 7)
 write.csv(details.AR.y1, file = paste0("details.AR.y1", simul.name, ".csv"))
 
 save(details.PR.y1, file = paste0("details.PR.y1", simul.name, ".Rdata"))
 col.names.PR.y1 <- colnames(details.PR.y1[,c(1:90)])
 details.PR.y1[col.names.PR.y1] <- sapply(details.PR.y1[col.names.PR.y1], 
                                          as.numeric)
-details.PR.y1[col.names.PR.y1] <- round(details.PR.y1[col.names.PR.y1], 
-                                        digits = 7)
 write.csv(details.PR.y1, file = paste0("details.PR.y1", simul.name, ".csv"))
 
 save(details.logAR.y1, file = paste0("details.logAR.y1", simul.name, ".Rdata"))
 col.names.logAR.y1 <- colnames(details.logAR.y1[,c(1:90)])
 details.logAR.y1[col.names.logAR.y1] <- sapply(details.logAR.y1[col.names.logAR.y1], 
                                          as.numeric)
-details.logAR.y1[col.names.logAR.y1] <- round(details.logAR.y1[col.names.logAR.y1], 
-                                        digits = 5)
-details.logAR.y1[46:54] <- round(details.logAR.y1[46:54], digits = 3)
 write.csv(details.logAR.y1, file = paste0("details.logAR.y1", simul.name, ".csv"))
 
 save(details.logPR.y1, file = paste0("details.logPR.y1", simul.name, ".Rdata"))
 col.names.logPR.y1 <- colnames(details.logPR.y1[,c(1:90)])
 details.logPR.y1[col.names.logPR.y1] <- sapply(details.logPR.y1[col.names.logPR.y1], 
                                          as.numeric)
-details.logPR.y1[col.names.logPR.y1] <- round(details.logPR.y1[col.names.logPR.y1], 
-                                        digits = 5)
 write.csv(details.logPR.y1, file = paste0("details.logPR.y1", simul.name, ".csv"))
 
 
 ## Print Latex tables for manuscript -------------------------------------------
 
-a <- cbind(cbind(details.logAR.y1[details.logAR.y1$K == 1,c(47:48, 65)]),
-           cbind(details.logAR.y1[details.logAR.y1$K == 2,c(47:48, 65, 84, 85)]))
+a <- cbind(cbind(details.logAR.y1[details.logAR.y1$K == 1, c(47:48, 65)]),
+           cbind(details.logAR.y1[details.logAR.y1$K == 2, c(47:48, 65, 84, 85)]))
 print(xtable(a, digits = c(3)), include.rownames=FALSE)
 
-a <- cbind(cbind(details.logAR.y1[details.logAR.y1$K == 1,c(49:50, 67, 69, 71)]),
-           cbind(details.logAR.y1[details.logAR.y1$K == 2,c(49:50, 67, 69, 71, 84, 85)]))
+a <- cbind(cbind(details.logAR.y1[details.logAR.y1$K == 1, c(49:50, 67, 69, 71)]),
+           cbind(details.logAR.y1[details.logAR.y1$K == 2, c(49:50, 67, 69, 71, 84, 85)]))
 print(xtable(a, digits = c(3)), include.rownames=FALSE)
 
