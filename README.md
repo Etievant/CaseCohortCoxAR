@@ -64,3 +64,11 @@ Each script relies on functions provided in `help.functions.R`.
 ### Reference
 
 Etiévant L, Gail MH (2024) Inference for Cause-Specific Cox Model Absolute Risk Estimated from Case-Cohort Data. preprint
+
+### Additional scripts
+
+* Script `PLCO analysis.R` replicates the data illustration proposed by Etiévant and Gail (2024) in Section 6.
+
+* Scripts `PLCO supplementary analysis.R` replicates the data illustration in Web Appendix D.
+
+Data underlying these analyses are maintained by the National Cancer Institute, Division of Cancer Epidemiology and Genetics and Division of Cancer Prevention, and are available to bona fide researchers upon submission and approval of a research proposal, and subsequent completion of a Data Transfer Agreement. Proposals can be submitted at https://cdas.cancer.gov/datasets/plco/2/.
