@@ -1,4 +1,4 @@
-Replication of the simulation studies in "Inference for Cause-Specific Cox Model Absolute Risk Estimated from Case-Cohort Data", by Etiévant and Gail (2024). The methods described in the article are implemented in the file `help.functions.R`.
+Replication of the simulation studies in "Inference for Cause-Specific Cox Model Absolute Risk Estimated from Case-Cohort Data", by Etiévant and Gail (2025). The methods described in the article are implemented in the file `help.functions.R`.
 
 ### Required packages 
 
@@ -25,7 +25,7 @@ Each script relies on functions provided in `help.functions.R`.
 
 * Open and run the whole script(s).
 
-* The results of the simulations are saved in tables csv. For example, when running script `simulations_exhaustive.R`, file `details.logAR.y1_exhaustive.csv` will contain the simulation results displayed in Table 1 in Section 5, in Web Table 6 in Web Appendix C.3.1, and in Web Table 11 in Web Appendix E.4.1.
+* The results of the simulations are saved in csv tables and Rdata files. For example, when running script `simulations_exhaustive.R`, file `details.logAR.y1_exhaustive.csv` will contain the simulation results displayed in Table 1 in Section 5, in Web Table 6 in Web Appendix C.3.1, and in Web Table 11 in Web Appendix E.4.1.
 
 
 ### Functions provided in `help.functions.R`
@@ -63,11 +63,11 @@ Each script relies on functions provided in `help.functions.R`.
 
 ### Reference
 
-Etiévant L, Gail MH (2024) Inference for Cause-Specific Cox Model Absolute Risk Estimated from Case-Cohort Data. preprint
+Etiévant L, Gail MH (2025) Inference for Cause-Specific Cox Model Absolute Risk Estimated from Case-Cohort Data. preprint
 
 ### Additional scripts
 
-* Script `PLCO analysis.R` replicates the data illustration proposed by Etiévant and Gail (2024) in Section 6.
+* Script `PLCO analysis.R` replicates the data illustration proposed by Etiévant and Gail (2025) in Section 6.
 
 * Scripts `PLCO supplementary analysis.R` replicates the data illustration in Web Appendix D.
 
