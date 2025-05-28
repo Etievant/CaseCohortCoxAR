@@ -143,12 +143,12 @@ Onerun <- function (p) {
   
   AR.y1.int <- function (t) {
     bh.y1 * exp(x1 %*% c(beta11, beta21, beta31)) * 
-      exp(- (bh.y1 * exp(x1 %*% c(beta11, beta21, beta31)) * t^(shape.y1) + 
-               bh.y2 * exp(x2 %*% c(beta12, beta22, beta32)) * t^(shape.y2))) *
+      exp(- (bh.y1 * exp(x1 %*% c(beta11, beta21, beta31)) * (t^(shape.y1) - t1^(shape.y1)) + 
+               bh.y2 * exp(x2 %*% c(beta12, beta22, beta32)) * (t^(shape.y2) - t1^(shape.y2)))) *
       shape.y1 * t^(shape.y1 - 1)
   }
   AR.y1.int <- Vectorize(AR.y1.int)
-  AR.y1 <- integrate(f = AR.y1.int, lower = 0, upper = t2)$value
+  AR.y1 <- integrate(f = AR.y1.int, lower = t1, upper = t2)$value
   
   PR.y1             <- c(1 - exp(- bh.y1 * exp(x1 %*% c(beta11, beta21, beta31)) * t2^(shape.y1)))
   
