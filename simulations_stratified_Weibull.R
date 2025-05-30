@@ -1248,7 +1248,6 @@ write.csv(details.logPR.y1, file = paste0("details.logPR.y1", simul.name, ".csv"
 
 ## Print Latex tables ----------------------------------------------------------
 ### No calibration
-
 a <- cbind(details.logAR.y1[details.logAR.y1$K == 1, c(84, 85, 80, 2, 20, 29:30, 47:48, 65, 4, 22, 31:32, 49:50, 67)]) # case cohort with K = 1, no calibration
 b <- cbind(details.logAR.y1[details.logAR.y1$K == 2, c(84, 85, 80, 2, 20, 29:30, 47:48, 65, 4, 22, 31:32, 49:50, 67)]) # case cohort with K = 2, no calibration
 
@@ -1265,7 +1264,6 @@ b                   <- data.frame(lapply(b_scientific , function(x) format(x, di
 print(xtable(b), include.rownames=FALSE) # K = 2, no calibration
 
 ### Calibration
-
 a <- cbind(details.logAR.y1[details.logAR.y1$K == 1, c(84, 85, 80, 6, 24, 33:34, 51:52, 69, 8, 26, 35:36, 53:54, 71)]) # case cohort with K = 1, no calibration
 b <- cbind(details.logAR.y1[details.logAR.y1$K == 2, c(84, 85, 80, 6, 24, 33:34, 51:52, 69, 8, 26, 35:36, 53:54, 71)]) # case cohort with K = 2, no calibration
 
