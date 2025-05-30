@@ -1231,12 +1231,48 @@ write.csv(details.logPR.y1, file = paste0("details.logPR.y1", simul.name, ".csv"
 
 
 ## Print Latex tables for manuscript -------------------------------------------
+### No calibration
+a <- cbind(details.logAR.y1[details.logAR.y1$K == 1, c(84, 85, 80, 2, 20, 29:30, 47:48, 65)]) # case cohort with K = 1, no calibration
+b <- cbind(details.logAR.y1[details.logAR.y1$K == 2, c(84, 85, 80, 2, 20, 29:30, 47:48, 65)]) # case cohort with K = 2, no calibration
 
-a <- cbind(cbind(details.logAR.y1[details.logAR.y1$K == 1, c(47:48, 65)]),
-           cbind(details.logAR.y1[details.logAR.y1$K == 2, c(47:48, 65, 84, 85)]))
-print(xtable(a, digits = c(3)), include.rownames=FALSE)
+a_scientific        <- a
+a_scientific[,4:7]  <- data.frame(lapply(a[,4:7], function(x) format(x, scientific = TRUE, digits = 2)))
+a_scientific[,10]    <- format(a[,10], digits = 2)
+a                   <- data.frame(lapply(a_scientific , function(x) format(x, digits = 3)))
+print(xtable(a), include.rownames=FALSE) # K = 1, no calibration
 
-a <- cbind(cbind(details.logAR.y1[details.logAR.y1$K == 1, c(49:50, 67, 69, 71)]),
-           cbind(details.logAR.y1[details.logAR.y1$K == 2, c(49:50, 67, 69, 71, 84, 85)]))
-print(xtable(a, digits = c(3)), include.rownames=FALSE)
+b_scientific        <- b 
+b_scientific[,4:7]  <- data.frame(lapply(b[,4:7], function(x) format(x, scientific = TRUE, digits = 2)))
+b_scientific[,10]    <- format(b[,10], digits = 2)
+b                   <- data.frame(lapply(b_scientific , function(x) format(x, digits = 3)))
+print(xtable(b), include.rownames=FALSE) # K = 2, no calibration
+
+### Calibration
+a <- cbind(details.logAR.y1[details.logAR.y1$K == 1, c(84, 85, 80, 4, 22, 31:32, 49:50, 67, 69, 71)]) # case cohort with K = 1 and calibration
+b <- cbind(details.logAR.y1[details.logAR.y1$K == 2, c(84, 85, 80, 4, 22, 31:32, 49:50, 67, 69, 71)]) # case cohort with K = 2 and calibration
+
+a_scientific        <- a
+a_scientific[,4:7]  <- data.frame(lapply(a[,4:7], function(x) format(x, scientific = TRUE, digits = 2)))
+a_scientific[,10:12]  <- data.frame(lapply(a[,10:12], function(x) format(x, digits = 2)))
+a                   <- data.frame(lapply(a_scientific , function(x) format(x, digits = 3)))
+print(xtable(a), include.rownames=FALSE) # K = 1 and calibration
+
+b_scientific        <- b 
+b_scientific[,4:7]  <- data.frame(lapply(b[,4:7], function(x) format(x, scientific = TRUE, digits = 2)))
+b_scientific[,10:12]  <- data.frame(lapply(b[,10:12], function(x) format(x, digits = 2)))
+b                   <- data.frame(lapply(b_scientific , function(x) format(x, digits = 3)))
+print(xtable(b), include.rownames=FALSE) # K = 2 and calibration
+
+### Cohort
+d <- cbind(details.logAR.y1[details.logAR.y1$K == 1, c(84, 85, 80, 1, 19, 28, 46)]) 
+
+d_scientific        <- d
+d_scientific[,4:6]  <- data.frame(lapply(d[,4:6], function(x) format(x, scientific = TRUE, digits = 2)))
+d                   <- data.frame(lapply(d_scientific , function(x) format(x, digits = 3)))
+print(xtable(d), include.rownames=FALSE)
+
+### Subcohort and case-cohort size
+b <- cbind(details.logAR.y1[, c(90, 86)]) 
+b <- data.frame(lapply(b , function(x) format(x, digits = 1)))
+print(xtable(cbind(b)), include.rownames=FALSE) 
 
