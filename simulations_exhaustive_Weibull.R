@@ -1274,5 +1274,5 @@ print(xtable(d), include.rownames=FALSE)
 ### Subcohort and case-cohort size
 b <- cbind(details.logAR.y1[, c(90, 86)]) 
 b <- data.frame(lapply(b , function(x) format(x, digits = 1)))
-print(xtable(cbind(b)), include.rownames=FALSE) 
+print(xtable(b), include.rownames=FALSE) 
 
