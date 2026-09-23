@@ -1,4 +1,4 @@
-Replication of the simulation studies in "Inference for Cause-Specific Cox Model Absolute Risk Estimated from Case-Cohort Data", by Etiévant and Gail (2025). The methods described in the article are implemented in the file `help.functions.R`.
+Replication of the simulation studies in "Inference for Cause-Specific Cox Model Absolute Risk Estimated from Case-Cohort Data", by Etiévant and Gail (2026). The methods described in the article are implemented in the file `help.functions.R`.
 
 ### Required packages 
 
@@ -8,13 +8,13 @@ dplyr, ggplot2, grid, gridExtra, gtable, nnet, parallel, survival, xtable.
 
 ### Scripts
 
-* Script `simulations_exhaustive.R` replicates the simulations proposed by Etiévant and Gail (2025) in Section 5.1.1, 5.2.1, and Web Appendix E.4.1.
+* Script `simulations_exhaustive.R` replicates the simulations proposed by Etiévant and Gail (2026) in Section 5.1.1, 5.2.1, and Web Appendix E.4.1.
 
 * Scripts `simulations_stratified.R` and `simulations_stratified_fraction.R` replicate the simulations in Section 5.1.2, 5.2.2, and Web Appendix E.4.2.
 
-* Script `simulations_exhaustive_Weibull.R` replicates the simulations proposed by Etiévant and Gail (2025) in Web Appendix C.3.1.
+* Script `simulations_exhaustive_Weibull.R` replicates the simulations proposed by Etiévant and Gail (2026) in Web Appendix C.3.2.
 
-* Scripts `simulations_stratified_Weibull.R` and `simulations_stratified_fraction_Weibull.R` replicate the simulations in Web Appendix C.3.2.
+* Scripts `simulations_stratified_Weibull.R` and `simulations_stratified_fraction_Weibull.R` replicate the simulations in Web Appendix C.3.3.
 
 Each script relies on functions provided in `help.functions.R`.
 
@@ -25,7 +25,7 @@ Each script relies on functions provided in `help.functions.R`.
 
 * Open and run the whole script(s).
 
-* The results of the simulations are saved in csv tables and Rdata files. For example, when running script `simulations_exhaustive.R`, file `details.logAR.y1_exhaustive.csv` will contain the simulation results displayed in Table 1 in Section 5, in Web Table 6 in Web Appendix C.3.1, and in Web Table 11 in Web Appendix E.4.1.
+* The results of the simulations are saved in csv tables and Rdata files. For example, when running script `simulations_exhaustive.R`, file `details.logAR.y1_exhaustive.csv` will contain the simulation results displayed in Tables 1 and 2 in Section 5 and in Web Tables 27 and 28 in Web Appendix E.4.1.
 
 
 ### Functions provided in `help.functions.R`
@@ -63,11 +63,12 @@ Each script relies on functions provided in `help.functions.R`.
 
 ### Reference
 
-Etiévant L, Gail MH (2025) Inference for Cause-Specific Cox Model Absolute Risk Estimated from Case-Cohort Data. preprint
+Lola Etiévant, Mitchell Gail. Inference for cause-specific cox model absolute risk in cohort subsampling designs. Lifetime Data Analysis, 2026, 32 (2). ⟨10.1007/s10985-025-09675-w⟩. 
+
 
 ### Additional scripts
 
-* Script `PLCO analysis.R` replicates the data illustration proposed by Etiévant and Gail (2025) in Section 6.
+* Script `PLCO analysis.R` replicates the data illustration proposed by Etiévant and Gail (2026) in Section 6.
 
 * Scripts `PLCO supplementary analysis.R` replicates the data illustration in Web Appendix D.
 
