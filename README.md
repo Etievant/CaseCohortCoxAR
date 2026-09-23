@@ -8,11 +8,11 @@ dplyr, ggplot2, grid, gridExtra, gtable, nnet, parallel, survival, xtable.
 
 ### Scripts
 
-* Script `simulations_exhaustive.R` replicates the simulations proposed by Etiévant and Gail (2024) in Section 5.1.1, 5.2.1, and Web Appendix E.4.1.
+* Script `simulations_exhaustive.R` replicates the simulations proposed by Etiévant and Gail (2025) in Section 5.1.1, 5.2.1, and Web Appendix E.4.1.
 
 * Scripts `simulations_stratified.R` and `simulations_stratified_fraction.R` replicate the simulations in Section 5.1.2, 5.2.2, and Web Appendix E.4.2.
 
-* Script `simulations_exhaustive_Weibull.R` replicates the simulations proposed by Etiévant and Gail (2024) in Web Appendix C.3.1.
+* Script `simulations_exhaustive_Weibull.R` replicates the simulations proposed by Etiévant and Gail (2025) in Web Appendix C.3.1.
 
 * Scripts `simulations_stratified_Weibull.R` and `simulations_stratified_fraction_Weibull.R` replicate the simulations in Web Appendix C.3.2.
 
